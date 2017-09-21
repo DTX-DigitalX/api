@@ -4,10 +4,10 @@
   "description": "dtx api teste",
   "main": "index.js",
   "scripts": {
-    "test": "export MONGO_HOST=mongodb://user:password@ds036967.mlab.com:36967/dtx && node_modules/.bin/mocha './test/**/*.spec.js'",
-    "coverage": "export MONGO_HOST=mongodb://user:password@ds036967.mlab.com:36967/dtx && istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*",
-    "seed": "export MONGO_HOST=mongodb://user:password@ds036967.mlab.com:36967/dtx && node ./database/run.js",
-    "dev": "export MONGO_HOST=mongodb://user:password@ds036967.mlab.com:36967/dtx && export NODE_ENV=dev && nodemon ./index.js",
+    "test": "export MONGO_HOST=[conexao] && node_modules/.bin/mocha './test/**/*.spec.js'",
+    "coverage": "export MONGO_HOST=[conexao] && istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*",
+    "seed": "export MONGO_HOST=[conexao] && node ./database/run.js",
+    "dev": "export MONGO_HOST=[conexao] && export NODE_ENV=dev && nodemon ./index.js",
     "start":"node server.js"
   },
   "author": "Carlos Rodrigues",
