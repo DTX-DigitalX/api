@@ -1,4 +1,4 @@
-# Build 
+# Template Rest API 
 
 [ ![Codeship Status for duratex/imagine-api](https://app.codeship.com/projects/06ed90e0-59e7-0135-ec1c-6a965d097a57/status?branch=master)](https://app.codeship.com/projects/237036)
 
