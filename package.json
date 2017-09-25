@@ -9,8 +9,7 @@
     "unitTestsCoverage": "nyc --reporter=lcov --reporter=text-lcov npm run unitTests",
     "checkCoverage": "nyc check-coverage --statements 6 --lines 8",
     "seed": "node ./database/run.js",
-    "dev": "nodemon ./server.js",
-
+    "dev": "nodemon ./index.js"
   },
   "author": "Carlos Rodrigues",
   "license": "ISC",

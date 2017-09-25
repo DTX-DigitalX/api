@@ -1,0 +1,31 @@
+image: carlosrodriguesjunior/imagine_ci
+pipelines:
+  default:
+    - step:
+        script:
+          - echo "This script runs on all branches that don't have any specific pipeline assigned in 'branches'."
+  branches:
+    master:
+      - step:
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run seedTest
+            - npm run unitTests
+            - npm run integratedTests
+            - npm run unitTestsCoverage
+            - npm run checkCoverage
+            - rsync -avz -e "ssh" * user@ip_server:/home/folder
+            - ssh user@ip_server "bash -i -c 'pm2 restart Service'"
+    dev:
+      - step:
+          script:
+            - npm install
+            - npm run seedTest
+            - npm run unitTests
+            - npm run integratedTests
+            - npm run unitTestsCoverage
+            - npm run checkCoverage
+            - rsync -avz -e "ssh" * user@ip_server:/home/folder
+            - ssh user@ip_server "bash -i -c 'pm2 restart Service'"
