@@ -4,11 +4,13 @@
   "description": "dtx api teste",
   "main": "index.js",
   "scripts": {
-    "test": "export MONGO_HOST=[conexao] && node_modules/.bin/mocha './test/**/*.spec.js'",
-    "coverage": "export MONGO_HOST=[conexao] && istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/**/*",
-    "seed": "export MONGO_HOST=[conexao] && node ./database/run.js",
-    "dev": "export MONGO_HOST=[conexao] && export NODE_ENV=dev && nodemon ./index.js",
-    "start":"node server.js"
+    "unitTests": "node_modules/.bin/mocha './test/**/*.spec.js'",
+    "integratedTests": "export MONGO_HOST=[mongoConexao] && node_modules/.bin/mocha './test/**/*.integrated.js'",
+    "unitTestsCoverage": "nyc --reporter=lcov --reporter=text-lcov npm run unitTests",
+    "checkCoverage": "nyc check-coverage --statements 6 --lines 8",
+    "seed": "node ./database/run.js",
+    "dev": "nodemon ./server.js",
+
   },
   "author": "Carlos Rodrigues",
   "license": "ISC",
